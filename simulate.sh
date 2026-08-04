@@ -24,7 +24,7 @@ header()  { divider; printf '▶  STEP: %s\n' "$*"; divider; }
 
 header "Parse config"
 
-ZIP_CODE=$(yq '.zip_code' monitor-config.yml)
+SEARCH_QUERY=$(scripts/build-search-query.sh monitor-config.yml)
 BEDROOMS=$(yq '.bedrooms // "2:3"' monitor-config.yml)
 
 # Escape only oniguruma metacharacters in each street name (e.g. the dot in "St. James Pl."),
@@ -45,17 +45,16 @@ while IFS= read -r br_key; do
 done < <(yq '.price_caps | keys | .[]' monitor-config.yml)
 [ -z "$PRICE_FILTER" ] && PRICE_FILTER='true'
 
-echo "  zip_code    : $ZIP_CODE"
+echo "  search_query: $SEARCH_QUERY"
 echo "  bedrooms    : $BEDROOMS"
 echo "  street_regex: $STREET_REGEX"
 echo "  price_filter: $PRICE_FILTER"
 
-# ── Step: Resolve zip code ───────────────────────────────────────────────────
+# ── Step: Resolve search area ────────────────────────────────────────────────
 
-header "Resolve zip code"
+header "Resolve search area"
 # No dispatch override in a local run; always use the config value.
-RESOLVED_ZIP="$ZIP_CODE"
-echo "  zip_code (resolved): $RESOLVED_ZIP"
+echo "  search query (resolved): $SEARCH_QUERY"
 
 # ── Step: Fetch and filter listings (using fixture) ──────────────────────────
 
@@ -72,7 +71,7 @@ TOTAL_COUNT=$(echo "$RESPONSE" | jq 'length')
 
 FILTERED=$(echo "$RESPONSE" | jq \
     --arg street_regex "$STREET_REGEX" \
-    '[.[] | select((.addressLine1 // "") | test($street_regex; "i")) | select(.price != null and ('"$PRICE_FILTER"'))]')
+    '[.[] | select(($street_regex == "") or ((.addressLine1 // "") | test($street_regex; "i"))) | select(.price != null and ('"$PRICE_FILTER"'))]')
 
 FILTERED_COUNT=$(echo "$FILTERED" | jq 'length')
 
@@ -86,7 +85,7 @@ echo
 echo "  Excluded listings:"
 EXCLUDED=$(echo "$RESPONSE" | jq \
     --arg street_regex "$STREET_REGEX" \
-    '[.[] | select( ((.addressLine1 // "") | test($street_regex; "i")) and (.price != null and ('"$PRICE_FILTER"')) | not )]')
+    '[.[] | select( (($street_regex == "") or ((.addressLine1 // "") | test($street_regex; "i"))) and (.price != null and ('"$PRICE_FILTER"')) | not )]')
 echo "$EXCLUDED" | jq -r '.[] | "    ✗ \(.addressLine1)  [\(.bedrooms)br, $\(.price)/mo]  id=\(.id)"'
 
 # ── Step: Check for new listings ─────────────────────────────────────────────

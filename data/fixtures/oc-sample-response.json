@@ -1,0 +1,38 @@
+[
+  {
+    "id": "oc-fixture-001",
+    "addressLine1": "100 Main Street",
+    "city": "Irvine",
+    "state": "CA",
+    "zipCode": "92614",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "price": 3500,
+    "squareFootage": 1100,
+    "listingUrl": "https://example.com/oc-fixture-001"
+  },
+  {
+    "id": "oc-fixture-002-over-cap",
+    "addressLine1": "200 Main Street",
+    "city": "Tustin",
+    "state": "CA",
+    "zipCode": "92780",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "price": 3700,
+    "squareFootage": 1200,
+    "listingUrl": "https://example.com/oc-fixture-002"
+  },
+  {
+    "id": "oc-fixture-003",
+    "addressLine1": "300 Main Street",
+    "city": "Anaheim",
+    "state": "CA",
+    "zipCode": "92805",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "price": 5200,
+    "squareFootage": 1600,
+    "listingUrl": "https://example.com/oc-fixture-003"
+  }
+]

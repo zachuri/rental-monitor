@@ -1,25 +1,22 @@
 # Rental Monitor Configuration
-# Edit these values, then push — no workflow editing required.
 
-# ZIP code to search for rental listings.
-# Example: "92657" for Newport Coast, CA
-zip_code: "92657"
+# Circular search covering Irvine, Anaheim, Garden Grove, Tustin, and nearby
+# central Orange County. RentCast allows one area query per API request, which
+# keeps this daily monitor within the free request allowance.
+search:
+  latitude: 33.739224
+  longitude: -117.858379
+  radius: 18 # miles
 
-# Street names to watch. Case-insensitive substring match.
-# Add or remove entries to match your target neighborhood.
-streets:
-  - Newport Coast Dr
-  - Crystal Cove
-  - Pelican Hill
-  - Reef Point
-  - Vista Ridge
-  - Sage Hill
+# Empty means area-wide matching. Add street names later to narrow the search.
+streets: []
 
-# Maximum monthly rent per bedroom count.
-# Remove a bedroom count to skip that filter tier entirely.
+# Maximum total monthly rent for whole-unit listings. These caps correspond to
+# the private per-person ceiling supplied for a household matching the bedroom
+# count. The monitor does not find individual room or roommate listings.
 price_caps:
-  2br: 5500
-  3br: 6000
+  2br: 3600
+  3br: 5400
 
-# Bedroom range for the Rentcast API query (min:max or exact number).
+# Search whole 2- and 3-bedroom units.
 bedrooms: "2:3"
