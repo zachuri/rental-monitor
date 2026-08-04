@@ -60,11 +60,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          ZIP_CODE=$(yq '.zip_code // ""' monitor-config.yml)
-          if [ -z "$ZIP_CODE" ]; then
-            echo "ERROR: zip_code is missing in monitor-config.yml — run the Setup Validation workflow." >&2
-            exit 1
-          fi
+          SEARCH_QUERY=$(scripts/build-search-query.sh monitor-config.yml)
           BEDROOMS=$(yq '.bedrooms // ""' monitor-config.yml)
           [ -z "$BEDROOMS" ] && BEDROOMS="2:3"
 
@@ -91,22 +87,25 @@ jobs:
           # Append each value to the $GITHUB_OUTPUT file so downstream steps can read them.
           # This is GitHub Actions' standard mechanism for passing data between steps.
           {
-            echo "zip_code=$ZIP_CODE"
+            echo "search_query=$SEARCH_QUERY"
             echo "bedrooms=$BEDROOMS"
             echo "street_regex=$STREET_REGEX"
             echo "price_filter=$PRICE_FILTER"
           } >> "$GITHUB_OUTPUT"
 
-      # Decide which ZIP code to actually use: a manual dispatch input wins; if it is
-      # blank the config file's value is used instead via shell fallback syntax ${A:-B}.
-      # Both values are in env: (not inline ${{ }}) to prevent script injection.
-      - name: Resolve zip code
-        id: zip
+      # A manual ZIP override wins; otherwise use the configured ZIP or circular area.
+      # Values are passed through env: rather than interpolated into the shell script.
+      - name: Resolve search area
+        id: search
         env:
           DISPATCH_ZIP: ${{ inputs.zip_code }}
-          ZIP_FROM_CONFIG: ${{ steps.config.outputs.zip_code }}
+          CONFIG_QUERY: ${{ steps.config.outputs.search_query }}
         run: |
-          echo "zip_code=${DISPATCH_ZIP:-$ZIP_FROM_CONFIG}" >> "$GITHUB_OUTPUT"
+          if [ -n "$DISPATCH_ZIP" ]; then
+            echo "query=zipCode=$DISPATCH_ZIP" >> "$GITHUB_OUTPUT"
+          else
+            echo "query=$CONFIG_QUERY" >> "$GITHUB_OUTPUT"
+          fi
 
       # Create the two GitHub Issue labels used by this workflow if they do not already exist.
       # --force makes the command succeed silently when a label is already present.
@@ -130,7 +129,7 @@ jobs:
         id: listings
         env:
           RENTCAST_API_KEY: ${{ secrets.RENTCAST_API_KEY }}
-          ZIP_CODE: ${{ steps.zip.outputs.zip_code }}
+          SEARCH_QUERY: ${{ steps.search.outputs.query }}
           BEDROOMS: ${{ steps.config.outputs.bedrooms }}
           STREET_REGEX: ${{ steps.config.outputs.street_regex }}
           PRICE_FILTER: ${{ steps.config.outputs.price_filter }}
@@ -143,7 +142,7 @@ jobs:
           # the HTTP status code to the output so we can check it separately from the body.
           HTTP_STATUS=$(curl -sS -w '%{http_code}' -o /tmp/rentcast_response.json \
             -H "X-Api-Key: $RENTCAST_API_KEY" \
-            "https://api.rentcast.io/v1/listings/rental/long-term?zipCode=${ZIP_CODE}&bedrooms=${BEDROOMS}&status=Active&limit=500")
+            "https://api.rentcast.io/v1/listings/rental/long-term?${SEARCH_QUERY}&bedrooms=${BEDROOMS}&status=Active&limit=500")
 
           # Abort if the API returned an error code (anything outside 200–299).
           # cat prints the response body so the error message is visible in the run log.
@@ -165,13 +164,13 @@ jobs:
 
           TOTAL_COUNT=$(echo "$RESPONSE" | jq 'length')
 
-          # Keep only listings whose address contains one of your configured street names
-          # (case-insensitive) AND whose price is within your per-bedroom cap.
+          # When streets is empty, keep the full search area; otherwise require a
+          # case-insensitive street match. Always enforce the per-bedroom price cap.
           # PRICE_FILTER is machine-generated; setup.yml validates that all values are
           # numeric, so interpolation into the jq expression is safe after setup passes.
           FILTERED=$(echo "$RESPONSE" | jq \
             --arg street_regex "$STREET_REGEX" \
-            '[.[] | select((.addressLine1 // "") | test($street_regex; "i")) | select(.price != null and ('"$PRICE_FILTER"'))]')
+            '[.[] | select(($street_regex == "") or ((.addressLine1 // "") | test($street_regex; "i"))) | select(.price != null and ('"$PRICE_FILTER"'))]')
 
           FILTERED_COUNT=$(echo "$FILTERED" | jq 'length')
 

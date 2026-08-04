@@ -48,8 +48,15 @@ jobs:
 
             # Check each required field individually so the issue names every problem at once.
             ZIP_CODE=$(yq '.zip_code // ""' monitor-config.yml)
+            LATITUDE=$(yq '.search.latitude // ""' monitor-config.yml)
+            LONGITUDE=$(yq '.search.longitude // ""' monitor-config.yml)
+            RADIUS=$(yq '.search.radius // ""' monitor-config.yml)
             if [ -z "$ZIP_CODE" ]; then
-              ERRORS+=('Missing required field: `zip_code`')
+              if [ -z "$LATITUDE" ] || [ -z "$LONGITUDE" ] || [ -z "$RADIUS" ]; then
+                ERRORS+=('Configure either `zip_code` or all of `search.latitude`, `search.longitude`, and `search.radius`')
+              elif ! printf '%s' "$LATITUDE $LONGITUDE $RADIUS" | grep -qE '^-?[0-9]+(\.[0-9]+)? -?[0-9]+(\.[0-9]+)? [0-9]+(\.[0-9]+)?$'; then
+                ERRORS+=('Area search latitude, longitude, and radius must be numeric')
+              fi
             fi
 
             # yq's type filter returns "array" for YAML sequences, "null" for missing fields,
@@ -60,8 +67,8 @@ jobs:
             # yq-compatible builds report JSON-style names ("array"/"null").
             if [ "$STREETS_TYPE" = "null" ] || [ "$STREETS_TYPE" = "!!null" ]; then
               ERRORS+=('Missing required field: `streets`')
-            elif { [ "$STREETS_TYPE" != "array" ] && [ "$STREETS_TYPE" != "!!seq" ]; } || [ "$STREETS_COUNT" -eq 0 ]; then
-              ERRORS+=('`streets` must be a non-empty list')
+            elif [ "$STREETS_TYPE" != "array" ] && [ "$STREETS_TYPE" != "!!seq" ]; then
+              ERRORS+=('`streets` must be a list; use an empty list for area-wide matching')
             else
               # An empty-string entry produces an empty regex that matches every address —
               # every listing in the ZIP would pass the street filter.

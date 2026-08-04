@@ -14,8 +14,8 @@ edit a config file, set one secret, and push.
 ## How it works
 
 1. A daily cron job (or manual trigger) calls the Rentcast long-term rental
-   listings API for your configured ZIP code.
-2. Results are filtered by street name and per-bedroom price cap.
+   listings API for your configured ZIP code or circular search area.
+2. Results are filtered by optional street names and per-bedroom price caps.
 3. Listings not seen before are recorded in `data/seen-listings.json`.
 4. A GitHub Issue is opened with a digest of every new listing.
 5. A heartbeat file (`data/last-run.json`) is committed on every run so you
@@ -49,18 +49,21 @@ In your new repository:
 
 ### 4. Edit `monitor-config.yml`
 
-Open `monitor-config.yml` and update the values for your target area:
+Open `monitor-config.yml` and update the values for your target area. This
+private copy uses a circular Orange County search so several nearby cities fit
+in one API request:
 
 ```yaml
-zip_code: "92657"          # Your target ZIP code
+search:
+  latitude: 33.739224
+  longitude: -117.858379
+  radius: 18               # Miles
 
-streets:                   # Street names to watch (case-insensitive substring match)
-  - Newport Coast Dr
-  - Crystal Cove
+streets: []                # Empty means the entire search area
 
-price_caps:                # Max monthly rent per bedroom count
-  2br: 5500
-  3br: 6000
+price_caps:                # Max total monthly rent per bedroom count
+  2br: YOUR_2BR_CAP
+  3br: YOUR_3BR_CAP
 
 bedrooms: "2:3"            # Bedroom range for the API query
 ```
@@ -100,8 +103,8 @@ From **Actions → Rental Monitor → Run workflow** you can:
 
 - **Override zip code**: test a different ZIP without editing the config.
 - **Dry run**: fetch and filter listings, log matches, but do **not** open
-  issues or update `seen-listings.json`. Useful for validating your config
-  without burning API quota or spamming issues.
+  issues or update `seen-listings.json`. It still uses one RentCast request,
+  but avoids issue and repository-write side effects while testing the config.
 
 ---
 
@@ -115,19 +118,18 @@ the failed run. You will never mistake silence for success.
 
 ## Local testing with the fixture
 
-A synthetic fixture at `data/fixtures/sample-response.json` covers the sample
-streets and price caps in the default config. You can test the full pipeline
-locally without making any API calls:
+A synthetic fixture at `data/fixtures/oc-sample-response.json` covers the
+area-wide and price-cap behavior in this private configuration. You can test
+the full pipeline locally without making any API calls:
 
 ```bash
-# Filter the fixture with jq to verify your street/price logic
-jq '[.[] | select((.addressLine1 // "") | test("Newport Coast Dr|Crystal Cove|Pelican Hill|Reef Point|Vista Ridge|Sage Hill"; "i")) | select(.price != null and ((.bedrooms == 2 and .price <= 5500) or (.bedrooms == 3 and .price <= 6000)))]' \
-  data/fixtures/sample-response.json
+./simulate.sh data/fixtures/oc-sample-response.json
+tests/test_build_search_query.sh
+tests/test_oc_simulation.sh
 ```
 
-Expected: listings `fixture-001`, `fixture-002`, and `fixture-003` pass the
-filter. `fixture-004` (over 2br cap), `fixture-005` (wrong street), and
-`fixture-006` (over 3br cap) are excluded.
+Expected: the query-builder and area-wide simulation tests pass. The simulated
+monitor accepts two in-budget fixtures and excludes the over-cap fixture.
 
 ---
 
