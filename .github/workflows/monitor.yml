@@ -142,6 +142,19 @@ jobs:
             fi
           fi
 
+      # Persist the reservation before the API call. If the commit or push fails,
+      # this step fails and the later fetch cannot run, preventing an uncounted call.
+      - name: Persist API request reservation
+        if: steps.quota.outputs.allowed == 'true'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/api-usage.json
+          git commit -m "chore: reserve RentCast API request [skip ci]"
+          git pull --rebase origin "$GITHUB_REF_NAME"
+          git push origin "HEAD:$GITHUB_REF_NAME"
+
       # Call the Rentcast API and filter the results down to listings that match your
       # streets and price caps; pass the filtered JSON and counts to later steps.
       - name: Fetch and filter listings
@@ -388,22 +401,17 @@ jobs:
             '{lastRun: $lastRun, totalInZip: $totalInZip, afterFilter: $afterFilter, newListings: $newListings}' \
             > data/last-run.json
 
-      # Always commit the API usage ledger, including for dry runs and failed requests.
-      # Normal runs also persist seen listings and the heartbeat.
+      # Persist seen listings and the heartbeat on normal runs. API request usage was
+      # already committed before the fetch; dry runs intentionally skip this step.
       - name: Commit data updates
-        if: always()
-        env:
-          DRY_RUN: ${{ inputs.dry_run }}
+        if: always() && inputs.dry_run != true
         run: |
           set -euo pipefail
 
           # Configure the identity that will appear as the commit author.
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/api-usage.json
-          if [ "$DRY_RUN" != "true" ]; then
-            git add data/seen-listings.json data/last-run.json
-          fi
+          git add data/seen-listings.json data/last-run.json
           # git diff --staged --quiet exits 0 when nothing changed; only commit when there
           # is actually something new to record so the history stays clean.
           if ! git diff --staged --quiet; then
