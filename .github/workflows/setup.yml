@@ -17,9 +17,10 @@ jobs:
   validate:
     # Spin up a fresh GitHub-hosted Ubuntu virtual machine for this job.
     runs-on: ubuntu-latest
-    # Only needs permission to open issues — no file writes are required.
-    # See: https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+    # Read access is required for actions/checkout in private repositories;
+    # issue access lets the workflow open a setup checklist when validation fails.
     permissions:
+      contents: read
       issues: write
 
     steps:
