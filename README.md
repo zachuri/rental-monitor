@@ -95,6 +95,14 @@ Edit the `cron` expression in `.github/workflows/monitor.yml`:
 Use [crontab.guru](https://crontab.guru/) to generate the right expression
 for your timezone.
 
+### Monthly request guard
+
+This private copy enforces a hard limit of **50 RentCast requests per calendar
+month**. Before every scheduled, manual, or dry run, the workflow reserves one
+request in `data/api-usage.json`. At 50, further API calls are skipped until the
+next UTC calendar month. The guard covers requests made by this repository; it
+cannot count requests made elsewhere with the same API key.
+
 ---
 
 ## Ad-hoc runs and dry runs

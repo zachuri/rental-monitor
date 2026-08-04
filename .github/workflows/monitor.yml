@@ -123,10 +123,30 @@ jobs:
             --description "Rental monitor workflow failure" \
             --force
 
+      # Reserve the request before contacting RentCast. The persisted ledger and
+      # workflow concurrency together enforce a hard 50-request calendar-month cap.
+      - name: Reserve monthly API request
+        id: quota
+        run: |
+          set -euo pipefail
+          if message=$(scripts/reserve-api-request.sh data/api-usage.json 50); then
+            echo "allowed=true" >> "$GITHUB_OUTPUT"
+            echo "$message"
+          else
+            code=$?
+            if [ "$code" -eq 3 ]; then
+              echo "allowed=false" >> "$GITHUB_OUTPUT"
+              echo "Monthly RentCast quota reached; skipping API request."
+            else
+              exit "$code"
+            fi
+          fi
+
       # Call the Rentcast API and filter the results down to listings that match your
       # streets and price caps; pass the filtered JSON and counts to later steps.
       - name: Fetch and filter listings
         id: listings
+        if: steps.quota.outputs.allowed == 'true'
         env:
           RENTCAST_API_KEY: ${{ secrets.RENTCAST_API_KEY }}
           SEARCH_QUERY: ${{ steps.search.outputs.query }}
@@ -192,7 +212,7 @@ jobs:
       # can inspect exactly what the API returned; it is never committed to the repository.
       # See: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       - name: Save raw API response as artifact
-        if: always()
+        if: always() && steps.quota.outputs.allowed == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: rentcast-raw-${{ github.run_id }}
@@ -204,6 +224,7 @@ jobs:
       # listings that have never been reported before; emit their IDs and a count.
       - name: Check for new listings
         id: new
+        if: steps.quota.outputs.allowed == 'true'
         env:
           FILTERED: ${{ steps.listings.outputs.filtered }}
         run: |
@@ -367,26 +388,29 @@ jobs:
             '{lastRun: $lastRun, totalInZip: $totalInZip, afterFilter: $afterFilter, newListings: $newListings}' \
             > data/last-run.json
 
-      # Commit seen-listings.json and last-run.json back to the repository if either changed.
-      # [skip ci] in the commit message tells GitHub Actions not to trigger this workflow
-      # again from the automated push, preventing an infinite loop.
+      # Always commit the API usage ledger, including for dry runs and failed requests.
+      # Normal runs also persist seen listings and the heartbeat.
       - name: Commit data updates
-        if: always() && inputs.dry_run != true
+        if: always()
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
           set -euo pipefail
 
           # Configure the identity that will appear as the commit author.
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/seen-listings.json data/last-run.json
+          git add data/api-usage.json
+          if [ "$DRY_RUN" != "true" ]; then
+            git add data/seen-listings.json data/last-run.json
+          fi
           # git diff --staged --quiet exits 0 when nothing changed; only commit when there
           # is actually something new to record so the history stays clean.
           if ! git diff --staged --quiet; then
             git commit -m "chore: update monitor data [skip ci]"
-            # Rebase on any commits pushed to main since checkout (e.g. config tweaks) to
-            # prevent non-fast-forward rejections from out-of-band pushes during a run.
-            git pull --rebase origin main
-            git push
+            # Rebase on the branch that triggered this run, then push explicitly.
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
 
       # If any earlier step in this job failed, open a GitHub Issue so you know the monitor
