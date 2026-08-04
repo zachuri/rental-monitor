@@ -185,41 +185,31 @@ jobs:
             exit 1
           fi
 
-          RESPONSE=$(cat /tmp/rentcast_response.json)
-
           # Guard against an unexpected response shape such as an error object instead
           # of the expected array; jq -e exits non-zero when the expression is false/null.
-          if ! echo "$RESPONSE" | jq -e 'type == "array"' > /dev/null; then
+          if ! jq -e 'type == "array"' /tmp/rentcast_response.json > /dev/null; then
             echo "Unexpected response format — expected JSON array"
-            echo "$RESPONSE" | head -c 500
+            head -c 500 /tmp/rentcast_response.json
             exit 1
           fi
 
-          TOTAL_COUNT=$(echo "$RESPONSE" | jq 'length')
+          TOTAL_COUNT=$(jq 'length' /tmp/rentcast_response.json)
 
           # When streets is empty, keep the full search area; otherwise require a
           # case-insensitive street match. Always enforce the per-bedroom price cap.
           # PRICE_FILTER is machine-generated; setup.yml validates that all values are
           # numeric, so interpolation into the jq expression is safe after setup passes.
-          FILTERED=$(echo "$RESPONSE" | jq \
+          jq \
             --arg street_regex "$STREET_REGEX" \
-            '[.[] | select(($street_regex == "") or ((.addressLine1 // "") | test($street_regex; "i"))) | select(.price != null and ('"$PRICE_FILTER"'))]')
+            '[.[] | select(($street_regex == "") or ((.addressLine1 // "") | test($street_regex; "i"))) | select(.price != null and ('"$PRICE_FILTER"'))]' \
+            /tmp/rentcast_response.json > /tmp/filtered.json
 
-          FILTERED_COUNT=$(echo "$FILTERED" | jq 'length')
+          FILTERED_COUNT=$(jq 'length' /tmp/filtered.json)
 
           # Write the two scalar counts using the simple KEY=VALUE format for step outputs.
           echo "total_count=$TOTAL_COUNT"       >> "$GITHUB_OUTPUT"
           echo "filtered_count=$FILTERED_COUNT" >> "$GITHUB_OUTPUT"
 
-          # Write the multi-line JSON array using a random delimiter to ensure no line
-          # inside the JSON is mistaken for the end marker.
-          # See: https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#multiline-strings
-          DELIM=$(openssl rand -hex 8)
-          {
-            echo "filtered<<$DELIM"
-            echo "$FILTERED"
-            echo "$DELIM"
-          } >> "$GITHUB_OUTPUT"
 
       # Upload the complete raw Rentcast response as a downloadable run artifact so you
       # can inspect exactly what the API returned; it is never committed to the repository.
@@ -238,47 +228,38 @@ jobs:
       - name: Check for new listings
         id: new
         if: steps.quota.outputs.allowed == 'true'
-        env:
-          FILTERED: ${{ steps.listings.outputs.filtered }}
         run: |
           set -euo pipefail
 
-          # Read the on-disk record of already-seen listing IDs, defaulting to an empty
-          # array if the file does not exist yet (e.g. on the very first run).
-          SEEN=$(cat data/seen-listings.json 2>/dev/null || echo '[]')
-          [ -z "$SEEN" ] && SEEN='[]'
+          # Use files rather than environment variables so large result sets cannot hit
+          # the operating system's argument-size limit between workflow steps.
+          if [ -s data/seen-listings.json ]; then
+            cp data/seen-listings.json /tmp/seen-listings.json
+          else
+            echo '[]' > /tmp/seen-listings.json
+          fi
 
           # Pull just the IDs from each source; the seen list supports both the legacy
           # plain-string format and the current {id, firstSeen} object format.
-          FILTERED_IDS=$(echo "$FILTERED" | jq '[.[] | select(.id) | .id]')
-          SEEN_IDS=$(echo "$SEEN" | jq '[.[] | if type == "object" then .id else . end | select(. != null)]')
+          jq '[.[] | select(.id) | .id]' /tmp/filtered.json > /tmp/filtered-ids.json
+          jq '[.[] | if type == "object" then .id else . end | select(. != null)]' \
+            /tmp/seen-listings.json > /tmp/seen-ids.json
 
           # Keep only IDs that appear in the filtered results but not in the seen list.
-          NEW_IDS=$(jq -n \
-            --argjson filtered "$FILTERED_IDS" \
-            --argjson seen_ids "$SEEN_IDS" \
-            '[$filtered[] | select(. as $id | $seen_ids | index($id) | not)]')
+          jq -n \
+            --slurpfile filtered /tmp/filtered-ids.json \
+            --slurpfile seen_ids /tmp/seen-ids.json \
+            '[$filtered[0][] | select(. as $id | $seen_ids[0] | index($id) | not)]' \
+            > /tmp/new-ids.json
 
-          NEW_COUNT=$(echo "$NEW_IDS" | jq 'length')
-
+          NEW_COUNT=$(jq 'length' /tmp/new-ids.json)
           echo "new_count=$NEW_COUNT" >> "$GITHUB_OUTPUT"
-          # Random delimiter again because listing IDs are opaque strings that could
-          # contain anything.
-          DELIM=$(openssl rand -hex 8)
-          {
-            echo "new_ids<<$DELIM"
-            echo "$NEW_IDS"
-            echo "$DELIM"
-          } >> "$GITHUB_OUTPUT"
 
       # Format a markdown issue body that lists every new find with its address, price,
       # bedroom/bathroom counts, square footage, and a link to the listing when available.
       - name: Build issue body
         id: issue
         if: steps.new.outputs.new_count > 0
-        env:
-          FILTERED: ${{ steps.listings.outputs.filtered }}
-          NEW_IDS: ${{ steps.new.outputs.new_ids }}
         run: |
           set -euo pipefail
 
@@ -287,12 +268,12 @@ jobs:
           # jq -r produces raw string output (no surrounding quotes).
           # Only listings whose ID appears in NEW_IDS are included; // is jq's
           # "alternative" operator and returns the right-hand value when the left is null.
-          BODY=$(echo "$FILTERED" | jq -r \
-            --argjson new_ids "$NEW_IDS" \
+          jq -r \
+            --slurpfile new_ids /tmp/new-ids.json \
             --arg today "$TODAY" '
             "## Rental Digest — " + $today + "\n\n" +
             ([ .[]
-              | select(.id as $id | $new_ids | index($id) != null)
+              | select(.id as $id | $new_ids[0] | index($id) != null)
               | "### " + (.addressLine1 // "Unknown address") + "\n"
               + "- **Beds:** " + ((.bedrooms // "N/A") | tostring) + " | **Baths:** " + ((.bathrooms // "N/A") | tostring) + "\n"
               + "- **Rent:** $" + ((.price // "N/A") | tostring) + "/mo\n"
@@ -300,14 +281,7 @@ jobs:
               + "- **First spotted:** " + $today + "\n"
               + (if .listingUrl then "- **Listing:** " + .listingUrl + "\n" else "" end)
             ] | join("\n\n---\n\n"))
-          ')
-
-          DELIM=$(openssl rand -hex 8)
-          {
-            echo "body<<$DELIM"
-            echo "$BODY"
-            echo "$DELIM"
-          } >> "$GITHUB_OUTPUT"
+          ' /tmp/filtered.json > /tmp/rental-issue.md
 
       # Create a GitHub Issue in this repository containing the full rental digest.
       # This step is skipped entirely when dry_run is true.
@@ -316,58 +290,48 @@ jobs:
         if: steps.new.outputs.new_count > 0 && inputs.dry_run != true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BODY: ${{ steps.issue.outputs.body }}
           COUNT: ${{ steps.new.outputs.new_count }}
         run: |
           set -euo pipefail
 
           TODAY=$(TZ=America/Los_Angeles date +"%B %d, %Y")
 
-          # Use curl to call the GitHub REST API directly; jq -n builds the request JSON
-          # safely without any shell escaping of the issue body content.
-          curl -sSf -X POST \
-            -H "Authorization: Bearer $GITHUB_TOKEN" \
-            -H "Content-Type: application/json" \
-            "https://api.github.com/repos/${{ github.repository }}/issues" \
-            -d "$(jq -n \
-              --arg title "$COUNT new listing(s) — $TODAY" \
-              --arg body "$BODY" \
-              '{title: $title, body: $body, labels: ["rental-digest"]}')" \
-            || { code=$?; echo "Failed to create digest issue (curl exit $code)"; exit "$code"; }
+          gh issue create \
+            --title "$COUNT new listing(s) — $TODAY" \
+            --body-file /tmp/rental-issue.md \
+            --label "rental-digest"
 
       # When dry_run is true, print the issue body that would have been posted so you can
       # verify your filter and formatting without opening a real issue.
       - name: Log dry-run matches
         if: steps.new.outputs.new_count > 0 && inputs.dry_run == true
         env:
-          BODY: ${{ steps.issue.outputs.body }}
           COUNT: ${{ steps.new.outputs.new_count }}
         run: |
           echo "=== DRY RUN: $COUNT new listing(s) would have been reported ==="
-          echo "$BODY"
+          cat /tmp/rental-issue.md
 
       # Record newly discovered listing IDs and today's date in seen-listings.json so they
       # are not reported again on future runs. Skipped in dry_run mode.
       - name: Update seen listings
         if: steps.new.outputs.new_count > 0 && inputs.dry_run != true
-        env:
-          NEW_IDS: ${{ steps.new.outputs.new_ids }}
         run: |
           set -euo pipefail
 
-          SEEN=$(cat data/seen-listings.json 2>/dev/null || echo '[]')
-          [ -z "$SEEN" ] && SEEN='[]'
+          if [ ! -s data/seen-listings.json ]; then
+            echo '[]' > data/seen-listings.json
+          fi
 
           TODAY=$(TZ=America/Los_Angeles date +%Y-%m-%d)
 
           # Merge the existing seen list with the new IDs, migrating any legacy plain-string
           # entries to the {id, firstSeen} object format, then deduplicate by ID.
           UPDATED=$(jq -n \
-            --argjson seen "$SEEN" \
-            --argjson new_ids "$NEW_IDS" \
+            --slurpfile seen data/seen-listings.json \
+            --slurpfile new_ids /tmp/new-ids.json \
             --arg today "$TODAY" \
-            '($seen | map(if type == "string" then {id: ., firstSeen: "unknown"} else . end)) +
-             ($new_ids | map({id: ., firstSeen: $today})) |
+            '($seen[0] | map(if type == "string" then {id: ., firstSeen: "unknown"} else . end)) +
+             ($new_ids[0] | map({id: ., firstSeen: $today})) |
              unique_by(.id)')
 
           echo "$UPDATED" > data/seen-listings.json
