@@ -17,7 +17,9 @@ edit a config file, set one secret, and push.
    listings API for your configured ZIP code or circular search area.
 2. Results are filtered by optional street names and per-bedroom price caps.
 3. Listings not seen before are recorded in `data/seen-listings.json`.
-4. A GitHub Issue is opened with a digest of every new listing.
+4. A GitHub Issue is opened with new listings grouped by city. Each property
+   address is clickable: it uses the original listing URL when RentCast supplies
+   one, otherwise it opens an exact-address rental search.
 5. A heartbeat file (`data/last-run.json`) is committed on every run so you
    can tell the monitor is alive even when there are no new listings.
 
