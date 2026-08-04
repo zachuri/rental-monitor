@@ -264,24 +264,11 @@ jobs:
           set -euo pipefail
 
           TODAY=$(TZ=America/Los_Angeles date +"%B %d, %Y")
-
-          # jq -r produces raw string output (no surrounding quotes).
-          # Only listings whose ID appears in NEW_IDS are included; // is jq's
-          # "alternative" operator and returns the right-hand value when the left is null.
-          jq -r \
-            --slurpfile new_ids /tmp/new-ids.json \
-            --arg today "$TODAY" '
-            "## Rental Digest — " + $today + "\n\n" +
-            ([ .[]
-              | select(.id as $id | $new_ids[0] | index($id) != null)
-              | "### " + (.addressLine1 // "Unknown address") + "\n"
-              + "- **Beds:** " + ((.bedrooms // "N/A") | tostring) + " | **Baths:** " + ((.bathrooms // "N/A") | tostring) + "\n"
-              + "- **Rent:** $" + ((.price // "N/A") | tostring) + "/mo\n"
-              + "- **Sq ft:** " + ((.squareFootage // "N/A") | tostring) + "\n"
-              + "- **First spotted:** " + $today + "\n"
-              + (if .listingUrl then "- **Listing:** " + .listingUrl + "\n" else "" end)
-            ] | join("\n\n---\n\n"))
-          ' /tmp/filtered.json > /tmp/rental-issue.md
+          python3 scripts/build-digest.py \
+            /tmp/filtered.json \
+            /tmp/new-ids.json \
+            /tmp/rental-issue.md \
+            "$TODAY"
 
       # Create a GitHub Issue in this repository containing the full rental digest.
       # This step is skipped entirely when dry_run is true.
