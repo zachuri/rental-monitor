@@ -452,6 +452,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "1000-Payton,---04-04304,-Irvine,-CA-92620",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "1000-Payton,---09-09206,-Irvine,-CA-92620",
     "firstSeen": "2026-08-06"
   },
@@ -772,6 +776,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "13202-Myford-Rd,---20-718,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "13202-Myford-Rd,---29-944,-Tustin,-CA-92782",
     "firstSeen": "2026-08-05"
   },
@@ -782,6 +790,10 @@
   {
     "id": "13202-Myford-Rd,---42-525,-Tustin,-CA-92782",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "13211-Myford-Rd,---01-0112,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "13211-Myford-Rd,---10-1022,-Tustin,-CA-92782",
@@ -964,6 +976,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "15219-Ibex-St,-Norwalk,-CA-90650",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "15221-Ibex-Ave,-Norwalk,-CA-90650",
     "firstSeen": "2026-08-04"
   },
@@ -1046,6 +1062,10 @@
   {
     "id": "1631-W-Pampas-Ln,-Apt-34,-Anaheim,-CA-92802",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "16586-Montego-Way,-Tustin,-CA-92780",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "16641-California-Ave,-Bellflower,-CA-90706",
@@ -1248,6 +1268,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "2-Milano-Dr,---31-1512,-Newport-Beach,-CA-92660",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "2000-W-Palmyra-Ave,-Apt-32,-Orange,-CA-92868",
     "firstSeen": "2026-08-04"
   },
@@ -1356,6 +1380,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "2230-W-Lincoln-Ave,-Apt-116,-Anaheim,-CA-92801",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "22322-Caminito-Mescalero,---267,-Laguna-Hills,-CA-92653",
     "firstSeen": "2026-08-04"
   },
@@ -1444,6 +1472,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "2317-W-Broadway,-Unit-2317-35,-Anaheim,-CA-92804",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "23236-Orange-Ave,-Apt-5,-Lake-Forest,-CA-92630",
     "firstSeen": "2026-08-08"
   },
@@ -1486,6 +1518,10 @@
   {
     "id": "23592-Windsong,---53-053,-Aliso-Viejo,-CA-92656",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "23758-N-Shore-Ln,-Unit-86,-Laguna-Niguel,-CA-92677",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "24152-Hollyoak,---04F,-Aliso-Viejo,-CA-92656",
@@ -1604,8 +1640,16 @@
     "firstSeen": "2026-08-06"
   },
   {
+    "id": "25133-Via,-Azul,-Laguna-Niguel,-CA-92677",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "2515-W-Winston-St,-Unit-28,-Anaheim,-CA-92804",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "25212-Stockport-St,-Apt-144,-Laguna-Hills,-CA-92653",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "25212-Stockport-St,-Apt-4,-Laguna-Hills,-CA-92653",
@@ -1648,6 +1692,14 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "26626-Guadiana,-Mission-Viejo,-CA-92691",
+    "firstSeen": "2026-08-09"
+  },
+  {
+    "id": "2684-Dietrich-Dr,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "2705-2723-E-Spaulding-St,-Long-Beach,-CA-90804",
     "firstSeen": "2026-08-07"
   },
@@ -1670,6 +1722,10 @@
   {
     "id": "2777-Alton-Pkwy,---002-333,-Irvine,-CA-92606",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "27865-Ameno,-Unit-40,-Mission-Viejo,-CA-92692",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "27960-Cabot-Rd,-Apt-368,-Laguna-Niguel,-CA-92677",
@@ -1836,6 +1892,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "31-E-Macarthur-Cres,-Apt-E413,-Santa-Ana,-CA-92707",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "31-E-Macarthur-Cres,-Apt-E423,-Santa-Ana,-CA-92707",
     "firstSeen": "2026-08-05"
   },
@@ -1936,6 +1996,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "3540-W-Christine-Cir,-Unit-C,-Anaheim,-CA-92804",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "3582-Green-Ave,-Apt-8,-Los-Alamitos,-CA-90720",
     "firstSeen": "2026-08-04"
   },
@@ -2018,6 +2082,10 @@
   {
     "id": "39-Prominence,-Lake-Forest,-CA-92630",
     "firstSeen": "2026-08-06"
+  },
+  {
+    "id": "4-Nightingale-Dr,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "4111-Carol-Dr,-Unit-C,-Fullerton,-CA-92833",
@@ -2168,6 +2236,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "53-Evening-Sun,-Irvine,-CA-92620",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "533-S-Devon-Rd,-Orange,-CA-92868",
     "firstSeen": "2026-08-04"
   },
@@ -2188,6 +2260,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "5725-Clearwater-Dr,-Yorba-Linda,-CA-92887",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "576-N-Bellflower-Blvd,-Unit-235,-Long-Beach,-CA-90814",
     "firstSeen": "2026-08-06"
   },
@@ -2202,6 +2278,10 @@
   {
     "id": "6029-Del-Amo-Blvd,-Lakewood,-CA-90713",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "606-Avenida-Sevilla-Unit-C,-Laguna-Woods,-CA-92637",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "6401-Warner-Ave,-Apt-104,-Huntington-Beach,-CA-92647",
@@ -2224,8 +2304,16 @@
     "firstSeen": "2026-08-06"
   },
   {
+    "id": "6401-Warner-Ave,-Apt-474,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "6401-Warner-Ave,-Apt-551,-Huntington-Beach,-CA-92647",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "65-Exeter,-Unit-38,-Irvine,-CA-92612",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "6500-Roosevelt,---08-821,-Irvine,-CA-92618",
@@ -2250,6 +2338,10 @@
   {
     "id": "6581-Bestel-Ave,-Westminster,-CA-92683",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "6700-Warner-Ave,-Apt-30H,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "7-Grenada-St,-Laguna-Niguel,-CA-92677",
@@ -2296,6 +2388,10 @@
     "firstSeen": "2026-08-07"
   },
   {
+    "id": "7461-Edinger-Ave,---7-404,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "7461-Edinger-Ave,---9-203,-Huntington-Beach,-CA-92647",
     "firstSeen": "2026-08-04"
   },
@@ -2340,6 +2436,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "8561-Belmont-St,-Unit-8561-7,-Cypress,-CA-90630",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "8602-Western-Ave,-Apt-16,-Buena-Park,-CA-90620",
     "firstSeen": "2026-08-05"
   },
@@ -2368,8 +2468,16 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "8734-E-Indian-Hills-Rd,-Unit-F,-Orange,-CA-92869",
+    "firstSeen": "2026-08-09"
+  },
+  {
     "id": "8762-Pacheco-Ave,-Westminster,-CA-92683",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "89-Ardmore,-Irvine,-CA-92602",
+    "firstSeen": "2026-08-09"
   },
   {
     "id": "8945-Riverbend-Dr,---08-100,-Huntington-Beach,-CA-92647",
