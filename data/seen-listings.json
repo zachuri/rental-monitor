@@ -132,6 +132,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "100-Ambazar,---16-546,-Irvine,-CA-92614",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "100-Ambazar,---18-601,-Irvine,-CA-92614",
     "firstSeen": "2026-08-04"
   },
@@ -572,6 +576,10 @@
     "firstSeen": "2026-08-06"
   },
   {
+    "id": "1000-Payton,---12-12106,-Irvine,-CA-92620",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "1000-Payton,---12-12203,-Irvine,-CA-92620",
     "firstSeen": "2026-08-05"
   },
@@ -936,6 +944,14 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "13202-Myford-Rd,---32-315,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-14"
+  },
+  {
+    "id": "13202-Myford-Rd,---37-405,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "13202-Myford-Rd,---42-525,-Tustin,-CA-92782",
     "firstSeen": "2026-08-05"
   },
@@ -984,6 +1000,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "13408-Heritage-Way,---10-312,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "13408-Heritage-Way,---12-414,-Tustin,-CA-92782",
     "firstSeen": "2026-08-06"
   },
@@ -994,6 +1014,10 @@
   {
     "id": "13408-Heritage-Way,---24-680,-Tustin,-CA-92782",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "13408-Heritage-Way,---28-756,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "13408-Heritage-Way,---32-822,-Tustin,-CA-92782",
@@ -1182,6 +1206,10 @@
   {
     "id": "15516-Longworth-Ave,-Norwalk,-CA-90650",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "15531-Belshire-Ave,-Norwalk,-CA-90650",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "15920-Alta-Vista-Dr,-Unit-F,-La-Mirada,-CA-90638",
@@ -1624,6 +1652,10 @@
     "firstSeen": "2026-08-07"
   },
   {
+    "id": "2235-W-Broadway,---H101,-Anaheim,-CA-92804",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "2235-W-Broadway,---H118,-Anaheim,-CA-92804",
     "firstSeen": "2026-08-08"
   },
@@ -1816,8 +1848,16 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "2480-Irvine-Blvd,---19-273,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "2480-Irvine-Blvd,---31-412,-Tustin,-CA-92782",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "2480-Irvine-Blvd,---32-257,-Tustin,-CA-92782",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "25-Palatine,---20-247,-Irvine,-CA-92612",
@@ -1934,6 +1974,14 @@
   {
     "id": "2724-N-Bristol-St,-Apt-I3,-Santa-Ana,-CA-92706",
     "firstSeen": "2026-08-12"
+  },
+  {
+    "id": "27260-Los-Altos,---09-0932,-Mission-Viejo,-CA-92691",
+    "firstSeen": "2026-08-14"
+  },
+  {
+    "id": "27260-Los-Altos,---12-1212,-Mission-Viejo,-CA-92691",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "27260-Los-Altos,---14-1424,-Mission-Viejo,-CA-92691",
@@ -2100,6 +2148,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "299-N-State-College-Blvd,---93-3017,-Orange,-CA-92868",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "299-N-State-College-Blvd,---93-3053,-Orange,-CA-92868",
     "firstSeen": "2026-08-12"
   },
@@ -2236,6 +2288,14 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "344-Knollglen,---16-228,-Irvine,-CA-92614",
+    "firstSeen": "2026-08-14"
+  },
+  {
+    "id": "344-Knollglen,---24-350,-Irvine,-CA-92614",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "344-Knollglen,---26-382,-Irvine,-CA-92614",
     "firstSeen": "2026-08-04"
   },
@@ -2310,6 +2370,10 @@
   {
     "id": "370-Obispo-Ave,-Long-Beach,-CA-90814",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "381-Sable,---10-1032,-Rancho-Santa-Margarita,-CA-92688",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "3883-Parkview-Ln,---601-03,-Irvine,-CA-92612",
@@ -2480,6 +2544,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "50-Prism,---02-5305,-Irvine,-CA-92618",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "50-Prism,---02-5400,-Irvine,-CA-92618",
     "firstSeen": "2026-08-05"
   },
@@ -2554,6 +2622,10 @@
   {
     "id": "500-Cardiff,---34-692,-Irvine,-CA-92606",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "500-Estancia,---07-222,-Irvine,-CA-92602",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "500-Estancia,---10-342,-Irvine,-CA-92602",
@@ -2648,6 +2720,10 @@
     "firstSeen": "2026-08-09"
   },
   {
+    "id": "625-Gadwall,-Irvine,-CA-92618",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "6386-W-Lincoln-Ave,-Buena-Park,-CA-90620",
     "firstSeen": "2026-08-10"
   },
@@ -2694,6 +2770,10 @@
   {
     "id": "6500-Roosevelt,---08-822,-Irvine,-CA-92618",
     "firstSeen": "2026-08-11"
+  },
+  {
+    "id": "6500-Roosevelt,---12-1222,-Irvine,-CA-92618",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "6500-Roosevelt,---16-1632,-Irvine,-CA-92618",
@@ -2750,6 +2830,10 @@
   {
     "id": "7213-21st-St,-Westminster,-CA-92683",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "7400-Center-Ave,---001-342,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "7400-Center-Ave,---001-429,-Huntington-Beach,-CA-92647",
@@ -2860,6 +2944,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "870-899-S-Philadelphia-St,---883D,-Anaheim,-CA-92805",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "8734-E-Indian-Hills-Rd,-Unit-F,-Orange,-CA-92869",
     "firstSeen": "2026-08-09"
   },
@@ -2896,8 +2984,16 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "97-Hearthstone,---01-091,-Irvine,-CA-92606",
+    "firstSeen": "2026-08-14"
+  },
+  {
     "id": "97-Hearthstone,---01-115,-Irvine,-CA-92606",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "97-Hearthstone,---01-128,-Irvine,-CA-92606",
+    "firstSeen": "2026-08-14"
   },
   {
     "id": "97-Hearthstone,---01-129,-Irvine,-CA-92606",
