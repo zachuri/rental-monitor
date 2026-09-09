@@ -240,8 +240,20 @@
     "firstSeen": "2026-09-05"
   },
   {
+    "id": "100-Esperanza,---06-06301,-Irvine,-CA-92618",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "100-Esperanza,---08-08210,-Irvine,-CA-92618",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "100-Esperanza,---08-08303,-Irvine,-CA-92618",
     "firstSeen": "2026-08-08"
+  },
+  {
+    "id": "100-Esperanza,---10-10310,-Irvine,-CA-92618",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "100-Esperanza,---13-13209,-Irvine,-CA-92618",
@@ -434,6 +446,10 @@
   {
     "id": "100-Monte-Vis,---10-313,-Irvine,-CA-92602",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "100-Monte-Vis,---18-536,-Irvine,-CA-92602",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "100-Monte-Vis,---24-713,-Irvine,-CA-92602",
@@ -684,6 +700,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "1000-Payton,---02-02308,-Irvine,-CA-92620",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "1000-Payton,---03-03203,-Irvine,-CA-92620",
     "firstSeen": "2026-08-15"
   },
@@ -694,6 +714,10 @@
   {
     "id": "1000-Payton,---04-04304,-Irvine,-CA-92620",
     "firstSeen": "2026-08-09"
+  },
+  {
+    "id": "1000-Payton,---05-05302,-Irvine,-CA-92620",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "1000-Payton,---05-05308,-Irvine,-CA-92620",
@@ -718,6 +742,14 @@
   {
     "id": "1000-Payton,---16-16210,-Irvine,-CA-92620",
     "firstSeen": "2026-08-15"
+  },
+  {
+    "id": "1000-Payton,---23-00325,-Irvine,-CA-92620",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "10002-Central-Ave,-Unit-20,-Garden-Grove,-CA-92843",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "1001-Starbuck-St,-Apt-C204,-Fullerton,-CA-92833",
@@ -2640,6 +2672,10 @@
     "firstSeen": "2026-08-31"
   },
   {
+    "id": "1921-Junipero-Ave,-Signal-Hill,-CA-90755",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "1921-S-Union-St,-Unit-1018,-Anaheim,-CA-92805",
     "firstSeen": "2026-08-04"
   },
@@ -2734,6 +2770,10 @@
   {
     "id": "2-Milano-Dr,---31-1512,-Newport-Beach,-CA-92660",
     "firstSeen": "2026-08-09"
+  },
+  {
+    "id": "2-Milano-Dr,---46-2432,-Newport-Beach,-CA-92660",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "2000-W-Palmyra-Ave,-Apt-32,-Orange,-CA-92868",
@@ -3296,6 +3336,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "23511-Aliso-Creek-Rd,---03-031,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "23511-Aliso-Creek-Rd,---08-089,-Aliso-Viejo,-CA-92656",
     "firstSeen": "2026-08-06"
   },
@@ -3330,6 +3374,10 @@
   {
     "id": "23592-Windsong,---53-053,-Aliso-Viejo,-CA-92656",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "23592-Windsong,---55-055,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "237-Terra-Cotta,-Irvine,-CA-92603",
@@ -3608,6 +3656,10 @@
     "firstSeen": "2026-08-12"
   },
   {
+    "id": "2501-Alton-Pkwy,---1-1500,-Irvine,-CA-92606",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "2501-E-4th-St,-Long-Beach,-CA-90814",
     "firstSeen": "2026-08-04"
   },
@@ -3684,6 +3736,10 @@
     "firstSeen": "2026-09-01"
   },
   {
+    "id": "25652-Rimgate-Dr,-Unit-5D,-Lake-Forest,-CA-92630",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "25713-View,-Pointe-Unit-8A,-Lake-Forest,-CA-92630",
     "firstSeen": "2026-09-01"
   },
@@ -3728,8 +3784,16 @@
     "firstSeen": "2026-08-06"
   },
   {
+    "id": "26033-Moulton-Pkwy,---015-226,-Laguna-Hills,-CA-92653",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "26033-Moulton-Pkwy,---015-230,-Laguna-Hills,-CA-92653",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "26033-Moulton-Pkwy,---015-237,-Laguna-Hills,-CA-92653",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "2618-Milton-Ave,-Fullerton,-CA-92831",
@@ -4008,6 +4072,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "299-N-State-College-Blvd,---01-1020,-Orange,-CA-92868",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "299-N-State-College-Blvd,---01-1022,-Orange,-CA-92868",
     "firstSeen": "2026-08-11"
   },
@@ -4088,6 +4156,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "3-Bear-Paw,---14-28,-Irvine,-CA-92604",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "3-Bear-Paw,---15-30,-Irvine,-CA-92604",
     "firstSeen": "2026-08-12"
   },
@@ -4098,6 +4170,10 @@
   {
     "id": "3-Bear-Paw,---22-43,-Irvine,-CA-92604",
     "firstSeen": "2026-08-11"
+  },
+  {
+    "id": "3-Bear-Paw,---34-65,-Irvine,-CA-92604",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "30-Calle-Del-Sur,-Rancho-Santa-Margarita,-CA-92688",
@@ -4194,6 +4270,14 @@
   {
     "id": "31-E-Macarthur-Cres,-Apt-B419,-Santa-Ana,-CA-92707",
     "firstSeen": "2026-08-07"
+  },
+  {
+    "id": "31-E-Macarthur-Cres,-Apt-B518,-Santa-Ana,-CA-92707",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "31-E-Macarthur-Cres,-Apt-E203,-Santa-Ana,-CA-92707",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "31-E-Macarthur-Cres,-Apt-E207,-Santa-Ana,-CA-92707",
@@ -4592,12 +4676,28 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "3883-Parkview-Ln,---601-19,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "3883-Parkview-Ln,---601-22,-Irvine,-CA-92612",
     "firstSeen": "2026-08-12"
   },
   {
+    "id": "3883-Parkview-Ln,---60115,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "3883-Parkview-Ln,---700-28,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "3883-Parkview-Ln,---700-29,-Irvine,-CA-92612",
     "firstSeen": "2026-08-11"
+  },
+  {
+    "id": "3883-Parkview-Ln,---700-30,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "3883-Parkview-Ln,---700-31,-Irvine,-CA-92612",
@@ -4606,6 +4706,10 @@
   {
     "id": "3883-Parkview-Ln,---701-06,-Irvine,-CA-92612",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "3883-Parkview-Ln,---701-16,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "3883-Parkview-Ln,---701-17,-Irvine,-CA-92612",
@@ -4618,6 +4722,10 @@
   {
     "id": "3883-Parkview-Ln,---800-25,-Irvine,-CA-92612",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "3883-Parkview-Ln,---80026,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "3883-Parkview-Ln,---80032,-Irvine,-CA-92612",
@@ -4636,6 +4744,10 @@
     "firstSeen": "2026-08-11"
   },
   {
+    "id": "3883-Parkview-Ln,---801-11,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "3883-Parkview-Ln,---801-14,-Irvine,-CA-92612",
     "firstSeen": "2026-08-11"
   },
@@ -4650,6 +4762,10 @@
   {
     "id": "3883-Parkview-Ln,---80115,-Irvine,-CA-92612",
     "firstSeen": "2026-08-11"
+  },
+  {
+    "id": "3883-Parkview-Ln,---900-26,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "3883-Parkview-Ln,---900-29,-Irvine,-CA-92612",
@@ -4668,8 +4784,16 @@
     "firstSeen": "2026-08-11"
   },
   {
+    "id": "3883-Parkview-Ln,---901-09,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "3883-Parkview-Ln,---901-11,-Irvine,-CA-92612",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "3883-Parkview-Ln,---901-18,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "3883-Parkview-Ln,---901-23,-Irvine,-CA-92612",
@@ -4746,6 +4870,10 @@
   {
     "id": "4111-Carol-Dr,-Unit-C,-Fullerton,-CA-92833",
     "firstSeen": "2026-08-06"
+  },
+  {
+    "id": "414-13th-St,-Apt-D,-Huntington-Beach,-CA-92648",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "418-Nobel-Ave-Apt-A,-Santa-Ana,-CA-92707",
@@ -4940,6 +5068,10 @@
     "firstSeen": "2026-08-11"
   },
   {
+    "id": "500-Cardiff,---06-234,-Irvine,-CA-92606",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "500-Cardiff,---06-248,-Irvine,-CA-92606",
     "firstSeen": "2026-08-04"
   },
@@ -4970,6 +5102,10 @@
   {
     "id": "500-Cardiff,---23-548,-Irvine,-CA-92606",
     "firstSeen": "2026-08-11"
+  },
+  {
+    "id": "500-Cardiff,---24-575,-Irvine,-CA-92606",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "500-Cardiff,---33-565,-Irvine,-CA-92606",
@@ -5016,8 +5152,24 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "5000-Capobella,---02-2206,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "5000-Capobella,---05-5208,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "5000-Capobella,---06-6307,-Aliso-Viejo,-CA-92656",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "5000-Capobella,---08-8229,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "5000-Capobella,---08-8323,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "5001-Beach-Blvd,-Buena-Park,-CA-90621",
@@ -5392,6 +5544,10 @@
     "firstSeen": "2026-08-11"
   },
   {
+    "id": "6500-Roosevelt,---09-932,-Irvine,-CA-92618",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "6500-Roosevelt,---12-1222,-Irvine,-CA-92618",
     "firstSeen": "2026-08-14"
   },
@@ -5436,8 +5592,24 @@
     "firstSeen": "2026-08-24"
   },
   {
+    "id": "6700-Warner-Ave,-Apt-26C,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "6700-Warner-Ave,-Apt-2G,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "6700-Warner-Ave,-Apt-30H,-Huntington-Beach,-CA-92647",
     "firstSeen": "2026-08-09"
+  },
+  {
+    "id": "6700-Warner-Ave,-Apt-32H,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-09-09"
+  },
+  {
+    "id": "6700-Warner-Ave,-Apt-7D,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "6918-Dale-St,-Buena-Park,-CA-90621",
@@ -5454,6 +5626,10 @@
   {
     "id": "7-Grenada-St,-Laguna-Niguel,-CA-92677",
     "firstSeen": "2026-08-08"
+  },
+  {
+    "id": "7-Starburst-Ct,-Newport-Beach,-CA-92663",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "70-Argonne-Ave,-Long-Beach,-CA-90803",
@@ -5844,6 +6020,10 @@
     "firstSeen": "2026-08-09"
   },
   {
+    "id": "86-Costero-Aisle,---294,-Irvine,-CA-92614",
+    "firstSeen": "2026-09-09"
+  },
+  {
     "id": "8602-Western-Ave,-Apt-16,-Buena-Park,-CA-90620",
     "firstSeen": "2026-08-05"
   },
@@ -5930,6 +6110,10 @@
   {
     "id": "89-Stanford-Ct,-Irvine,-CA-92612",
     "firstSeen": "2026-08-15"
+  },
+  {
+    "id": "8945-Riverbend-Dr,---01-010,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-09-09"
   },
   {
     "id": "8945-Riverbend-Dr,---08-100,-Huntington-Beach,-CA-92647",
