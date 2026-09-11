@@ -524,6 +524,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "100-Robinson-Dr,---14-465,-Tustin,-CA-92782",
+    "firstSeen": "2026-09-11"
+  },
+  {
     "id": "100-Robinson-Dr,---14-467,-Tustin,-CA-92782",
     "firstSeen": "2026-08-04"
   },
@@ -676,12 +680,20 @@
     "firstSeen": "2026-08-12"
   },
   {
+    "id": "100-Wycliffe,---12-1233,-Irvine,-CA-92602",
+    "firstSeen": "2026-09-11"
+  },
+  {
     "id": "100-Wycliffe,---13-1307,-Irvine,-CA-92602",
     "firstSeen": "2026-08-04"
   },
   {
     "id": "100-Wycliffe,---13-1325,-Irvine,-CA-92602",
     "firstSeen": "2026-08-06"
+  },
+  {
+    "id": "100-Wycliffe,---16-1606,-Irvine,-CA-92602",
+    "firstSeen": "2026-09-11"
   },
   {
     "id": "1000-Archway,---07-4112,-Irvine,-CA-92618",
@@ -1508,6 +1520,10 @@
     "firstSeen": "2026-08-12"
   },
   {
+    "id": "130-E-Chapman-Ave,---1-215,-Fullerton,-CA-92832",
+    "firstSeen": "2026-09-11"
+  },
+  {
     "id": "130-E-Chapman-Ave,---1-315,-Fullerton,-CA-92832",
     "firstSeen": "2026-08-11"
   },
@@ -1764,6 +1780,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "13800-Parkcenter-Ln,---29-408,-Tustin,-CA-92782",
+    "firstSeen": "2026-09-11"
+  },
+  {
     "id": "13800-Parkcenter-Ln,---30-417,-Tustin,-CA-92782",
     "firstSeen": "2026-08-04"
   },
@@ -1970,6 +1990,10 @@
   {
     "id": "14901-Newport-Ave,-Apt-114,-Tustin,-CA-92780",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "14901-Newport-Ave,-Apt-14,-Tustin,-CA-92780",
+    "firstSeen": "2026-09-11"
   },
   {
     "id": "14901-Newport-Ave,-Apt-40,-Tustin,-CA-92780",
@@ -3826,6 +3850,10 @@
   {
     "id": "2635-Milton-Ave,-Fullerton,-CA-92831",
     "firstSeen": "2026-09-01"
+  },
+  {
+    "id": "26402-Kilkarney,---18,-Lake-Forest,-CA-92630",
+    "firstSeen": "2026-09-11"
   },
   {
     "id": "265-N-Grand,-Orange,-CA-92866",
@@ -5742,6 +5770,10 @@
   {
     "id": "7330-Corsican-Dr,-Apt-D,-Huntington-Beach,-CA-92647",
     "firstSeen": "2026-09-01"
+  },
+  {
+    "id": "7400-Center-Ave,---001-224,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-09-11"
   },
   {
     "id": "7400-Center-Ave,---001-342,-Huntington-Beach,-CA-92647",
