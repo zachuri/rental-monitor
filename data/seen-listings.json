@@ -68,6 +68,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "1-Park,-Newport---2090,-Newport-Beach,-CA-92660",
+    "firstSeen": "2026-09-13"
+  },
+  {
     "id": "1-Park,-Newport---2550,-Newport-Beach,-CA-92660",
     "firstSeen": "2026-08-12"
   },
@@ -1124,6 +1128,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "1101-W-Stevens-Ave,-Apt-157,-Santa-Ana,-CA-92707",
+    "firstSeen": "2026-09-13"
+  },
+  {
     "id": "1101-W-Stevens-Ave,-Apt-184,-Santa-Ana,-CA-92707",
     "firstSeen": "2026-08-04"
   },
@@ -1138,6 +1146,10 @@
   {
     "id": "1101-W-Stevens-Ave,-Apt-208,-Santa-Ana,-CA-92707",
     "firstSeen": "2026-08-15"
+  },
+  {
+    "id": "1101-W-Stevens-Ave,-Apt-237,-Santa-Ana,-CA-92707",
+    "firstSeen": "2026-09-13"
   },
   {
     "id": "1101-W-Stevens-Ave,-Apt-54,-Santa-Ana,-CA-92707",
@@ -1678,6 +1690,10 @@
   {
     "id": "13211-Myford-Rd,---10-1022,-Tustin,-CA-92782",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "13211-Myford-Rd,---11-1111,-Tustin,-CA-92782",
+    "firstSeen": "2026-09-13"
   },
   {
     "id": "13211-Myford-Rd,---11-1133,-Tustin,-CA-92782",
@@ -2522,6 +2538,10 @@
   {
     "id": "17560-Rosa-Drew-Ln,---14-04,-Irvine,-CA-92612",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "17560-Rosa-Drew-Ln,---15-07,-Irvine,-CA-92612",
+    "firstSeen": "2026-09-13"
   },
   {
     "id": "17560-Rosa-Drew-Ln,---1609,-Irvine,-CA-92612",
@@ -3676,12 +3696,20 @@
     "firstSeen": "2026-09-01"
   },
   {
+    "id": "2480-Irvine-Blvd,---07-155,-Tustin,-CA-92782",
+    "firstSeen": "2026-09-13"
+  },
+  {
     "id": "2480-Irvine-Blvd,---08-124,-Tustin,-CA-92782",
     "firstSeen": "2026-08-07"
   },
   {
     "id": "2480-Irvine-Blvd,---11-188,-Tustin,-CA-92782",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "2480-Irvine-Blvd,---12-170,-Tustin,-CA-92782",
+    "firstSeen": "2026-09-13"
   },
   {
     "id": "2480-Irvine-Blvd,---16-332,-Tustin,-CA-92782",
@@ -5280,12 +5308,20 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "500-Estancia,---03-134,-Irvine,-CA-92602",
+    "firstSeen": "2026-09-13"
+  },
+  {
     "id": "500-Estancia,---07-222,-Irvine,-CA-92602",
     "firstSeen": "2026-08-14"
   },
   {
     "id": "500-Estancia,---10-342,-Irvine,-CA-92602",
     "firstSeen": "2026-08-06"
+  },
+  {
+    "id": "500-Estancia,---17-644,-Irvine,-CA-92602",
+    "firstSeen": "2026-09-13"
   },
   {
     "id": "500-Estancia,---19-714,-Irvine,-CA-92602",
@@ -6270,6 +6306,10 @@
   {
     "id": "8781-Walker-St,-Cypress,-CA-90630",
     "firstSeen": "2026-08-23"
+  },
+  {
+    "id": "8861-La-Zana-Ct,-Fountain-Valley,-CA-92708",
+    "firstSeen": "2026-09-13"
   },
   {
     "id": "8882-Heil-Ave,-Westminster,-CA-92683",
