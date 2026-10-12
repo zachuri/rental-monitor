@@ -352,6 +352,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "100-Grand-Canal,---04-1831,-Irvine,-CA-92620",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "100-Grand-Canal,---04-1837,-Irvine,-CA-92620",
     "firstSeen": "2026-08-05"
   },
@@ -646,6 +650,10 @@
   {
     "id": "100-Robinson-Dr,---08-353,-Tustin,-CA-92782",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "100-Robinson-Dr,---09-377,-Tustin,-CA-92782",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "100-Robinson-Dr,---14-455,-Tustin,-CA-92782",
@@ -3788,6 +3796,10 @@
     "firstSeen": "2026-10-11"
   },
   {
+    "id": "1801-E-Katella-Ave,-Apt-2145,-Anaheim,-CA-92805",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "18022-Jersey-Ave,-Artesia,-CA-90701",
     "firstSeen": "2026-09-01"
   },
@@ -3902,6 +3914,10 @@
   {
     "id": "18632-Del-Bonita-St,-Rowland-Heights,-CA-91748",
     "firstSeen": "2026-08-23"
+  },
+  {
+    "id": "18644-Maplewood-Cir,-Huntington-Beach,-CA-92646",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "1867-Temple-Ave,-Signal-Hill,-CA-90755",
@@ -4374,6 +4390,10 @@
   {
     "id": "20743-Elaine-Ave,-Lakewood,-CA-90715",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "2075-S-June-Pl,-Anaheim,-CA-92802",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "20772-E-Crest-Ln,---C,-Diamond-Bar,-CA-91789",
@@ -5624,6 +5644,10 @@
     "firstSeen": "2026-08-16"
   },
   {
+    "id": "2555-Main-St,-Apt-4011,-Irvine,-CA-92614",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "2555-Main-St,-Irvine,-CA-92614",
     "firstSeen": "2026-09-16"
   },
@@ -6330,6 +6354,10 @@
   {
     "id": "30041-Tessier,-Apt-18,-Laguna-Niguel,-CA-92677",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "30041-Tessier,-Apt-180,-Laguna-Niguel,-CA-92677",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "30041-Tessier,-Apt-246,-Laguna-Niguel,-CA-92677",
@@ -7388,6 +7416,10 @@
     "firstSeen": "2026-09-26"
   },
   {
+    "id": "4101-Glenwood-St,-Irvine,-CA-92604",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "411-S-Kroeger-St,-Anaheim,-CA-92805",
     "firstSeen": "2026-08-23"
   },
@@ -7740,6 +7772,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "500-Cardiff,---11-339,-Irvine,-CA-92606",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "500-Cardiff,---12-353,-Irvine,-CA-92606",
     "firstSeen": "2026-08-11"
   },
@@ -7750,6 +7786,10 @@
   {
     "id": "500-Cardiff,---15-394,-Irvine,-CA-92606",
     "firstSeen": "2026-09-20"
+  },
+  {
+    "id": "500-Cardiff,---17-447,-Irvine,-CA-92606",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "500-Cardiff,---23-548,-Irvine,-CA-92606",
@@ -7828,6 +7868,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "5000-Capobella,---07-7215,-Aliso-Viejo,-CA-92656",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "5000-Capobella,---08-8229,-Aliso-Viejo,-CA-92656",
     "firstSeen": "2026-09-09"
   },
@@ -7874,6 +7918,10 @@
   {
     "id": "51-Sparrowhawk,-Irvine,-CA-92604",
     "firstSeen": "2026-08-16"
+  },
+  {
+    "id": "51-Tierra-Plano,-Rancho-Santa-Margarita,-CA-92688",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "5101-E-Marita-Ln,-Anaheim,-CA-92807",
@@ -9252,8 +9300,16 @@
     "firstSeen": "2026-08-20"
   },
   {
+    "id": "8604-E-Whitewater-Dr,---14-108,-Anaheim,-CA-92808",
+    "firstSeen": "2026-10-12"
+  },
+  {
     "id": "8604-E-Whitewater-Dr,---16-128,-Anaheim,-CA-92808",
     "firstSeen": "2026-08-15"
+  },
+  {
+    "id": "8604-E-Whitewater-Dr,---20-210,-Anaheim,-CA-92808",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "8604-E-Whitewater-Dr,---21-104,-Anaheim,-CA-92808",
@@ -9422,6 +9478,10 @@
   {
     "id": "97-Hearthstone,---01-028,-Irvine,-CA-92606",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "97-Hearthstone,---01-068,-Irvine,-CA-92606",
+    "firstSeen": "2026-10-12"
   },
   {
     "id": "97-Hearthstone,---01-091,-Irvine,-CA-92606",
