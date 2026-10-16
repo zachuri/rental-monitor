@@ -280,6 +280,10 @@
     "firstSeen": "2026-08-06"
   },
   {
+    "id": "100-Anacapa,---21-2109,-Irvine,-CA-92602",
+    "firstSeen": "2026-10-16"
+  },
+  {
     "id": "100-Anacapa,---26-2609,-Irvine,-CA-92602",
     "firstSeen": "2026-08-15"
   },
@@ -1628,6 +1632,10 @@
     "firstSeen": "2026-08-24"
   },
   {
+    "id": "1119-W-Broadway-St,-Anaheim,-CA-92805",
+    "firstSeen": "2026-10-16"
+  },
+  {
     "id": "112-2nd-St,-Seal-Beach,-CA-90740",
     "firstSeen": "2026-09-01"
   },
@@ -1894,6 +1902,10 @@
   {
     "id": "121-E-Bay-St,-Costa-Mesa,-CA-92627",
     "firstSeen": "2026-08-23"
+  },
+  {
+    "id": "121-E-Bay-St,-Unit-121A,-Costa-Mesa,-CA-92627",
+    "firstSeen": "2026-10-16"
   },
   {
     "id": "121-Pasto-Rico,-Rancho-Santa-Margarita,-CA-92688",
@@ -4226,6 +4238,10 @@
   {
     "id": "19868-Piccadilly-Ln,-Huntington-Beach,-CA-92646",
     "firstSeen": "2026-08-23"
+  },
+  {
+    "id": "19906-Vermont-Ln,-Huntington-Beach,-CA-92646",
+    "firstSeen": "2026-10-16"
   },
   {
     "id": "19907-Esquiline-Ave,-Walnut,-CA-91789",
@@ -7144,6 +7160,10 @@
     "firstSeen": "2026-08-05"
   },
   {
+    "id": "3602-Green-Ave,-Apt-2,-Los-Alamitos,-CA-90720",
+    "firstSeen": "2026-10-16"
+  },
+  {
     "id": "362-Redondo-Ave,-Long-Beach,-CA-90814",
     "firstSeen": "2026-09-24"
   },
@@ -7484,8 +7504,16 @@
     "firstSeen": "2026-09-17"
   },
   {
+    "id": "400-Enclave-Cir,---421-306,-Costa-Mesa,-CA-92626",
+    "firstSeen": "2026-10-16"
+  },
+  {
     "id": "400-Enclave-Cir,---423-308,-Costa-Mesa,-CA-92626",
     "firstSeen": "2026-09-17"
+  },
+  {
+    "id": "400-Enclave-Cir,---425-304,-Costa-Mesa,-CA-92626",
+    "firstSeen": "2026-10-16"
   },
   {
     "id": "400-Enclave-Cir,---426-302,-Costa-Mesa,-CA-92626",
@@ -8316,6 +8344,10 @@
     "firstSeen": "2026-08-23"
   },
   {
+    "id": "5848-Chapman-Ave,-Garden-Grove,-CA-92845",
+    "firstSeen": "2026-10-16"
+  },
+  {
     "id": "589-S-Lyon-St,-Santa-Ana,-CA-92701",
     "firstSeen": "2026-09-01"
   },
@@ -8606,6 +8638,10 @@
   {
     "id": "6401-Warner-Ave,-Apt-577,-Huntington-Beach,-CA-92647",
     "firstSeen": "2026-09-19"
+  },
+  {
+    "id": "6401-Warner-Ave,-Apt-589,-Huntington-Beach,-CA-92647",
+    "firstSeen": "2026-10-16"
   },
   {
     "id": "6412-Crescent-Ave,-Apt-23,-Buena-Park,-CA-90620",
@@ -9566,6 +9602,10 @@
   {
     "id": "9081-Cerritos-Ave,-Anaheim,-CA-92804",
     "firstSeen": "2026-09-28"
+  },
+  {
+    "id": "909-S-Knott-Ave,-Apt-49,-Anaheim,-CA-92804",
+    "firstSeen": "2026-10-16"
   },
   {
     "id": "909-S-Knott-Ave,-Apt-94,-Anaheim,-CA-92804",
