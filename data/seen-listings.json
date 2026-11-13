@@ -848,6 +848,10 @@
     "firstSeen": "2026-10-08"
   },
   {
+    "id": "100-Las-Palmas-Dr,---11-449,-Irvine,-CA-92602",
+    "firstSeen": "2026-11-13"
+  },
+  {
     "id": "100-Las-Palmas-Dr,---11-461,-Irvine,-CA-92602",
     "firstSeen": "2026-11-03"
   },
@@ -1084,6 +1088,10 @@
     "firstSeen": "2026-08-04"
   },
   {
+    "id": "100-Robinson-Dr,---06-301,-Tustin,-CA-92782",
+    "firstSeen": "2026-11-13"
+  },
+  {
     "id": "100-Robinson-Dr,---08-335,-Tustin,-CA-92782",
     "firstSeen": "2026-08-06"
   },
@@ -1218,6 +1226,10 @@
   {
     "id": "100-Simplicity,---09-0908,-Irvine,-CA-92620",
     "firstSeen": "2026-10-30"
+  },
+  {
+    "id": "100-Simplicity,---12-1204,-Irvine,-CA-92620",
+    "firstSeen": "2026-11-13"
   },
   {
     "id": "100-Simplicity,---13-1306,-Irvine,-CA-92620",
@@ -1838,6 +1850,10 @@
   {
     "id": "1043-Newport-Ave,-Long-Beach,-CA-90804",
     "firstSeen": "2026-08-06"
+  },
+  {
+    "id": "1045-S-Tivoli-Ct,-Anaheim,-CA-92808",
+    "firstSeen": "2026-11-13"
   },
   {
     "id": "1046-E-Chalynn-Ave,-Orange,-CA-92866",
@@ -3820,6 +3836,10 @@
     "firstSeen": "2026-08-24"
   },
   {
+    "id": "141-E-Wakefield-Ave,-Apt-1,-Anaheim,-CA-92802",
+    "firstSeen": "2026-11-13"
+  },
+  {
     "id": "141-E-Wakefield-Ave,-Apt-2,-Anaheim,-CA-92802",
     "firstSeen": "2026-08-06"
   },
@@ -4414,6 +4434,10 @@
   {
     "id": "15400-Belgrade-St,-Apt-16,-Westminster,-CA-92683",
     "firstSeen": "2026-08-04"
+  },
+  {
+    "id": "15400-Belgrade-St,-Apt-54,-Westminster,-CA-92683",
+    "firstSeen": "2026-11-13"
   },
   {
     "id": "15400-Belgrade-St,-Apt-92,-Westminster,-CA-92683",
@@ -6298,6 +6322,10 @@
   {
     "id": "210-S-Bush-St,-Orange,-CA-92868",
     "firstSeen": "2026-09-28"
+  },
+  {
+    "id": "2100-Sullivan,---1117,-Irvine,-CA-92614",
+    "firstSeen": "2026-11-13"
   },
   {
     "id": "2100-Sunny-Ridge-Pl,-Fullerton,-CA-92833",
@@ -12678,6 +12706,14 @@
   {
     "id": "7400-Center-Ave,---002-428,-Huntington-Beach,-CA-92647",
     "firstSeen": "2026-08-05"
+  },
+  {
+    "id": "7450-Crescent-Ave,---7430-310,-Buena-Park,-CA-90620",
+    "firstSeen": "2026-11-13"
+  },
+  {
+    "id": "7450-Crescent-Ave,-Apt-208,-Buena-Park,-CA-90620",
+    "firstSeen": "2026-11-13"
   },
   {
     "id": "7450-Crescent-Ave,-Apt-402,-Buena-Park,-CA-90620",
